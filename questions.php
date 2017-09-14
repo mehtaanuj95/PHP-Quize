@@ -1,10 +1,6 @@
 <?php
 session_start();
 ?>
-<!---
-Site	:	WWW.FEWPRESS.COM
-Author	:	Md. Rokonuzzaman Rokon
---->
 
 <?php 
 require 'config.php';
@@ -12,8 +8,11 @@ $category='';
  if(!empty($_POST['name'])){
      $name=$_POST['name'];
      $category=$_POST['category'];
-     mysql_query("INSERT INTO users (id, user_name,score,category_id)VALUES ('NULL','$name',0,'$category')") or die(mysql_error());
+     //mysql_query("INSERT INTO users (score,category_id)VALUES (0,'$category')") or die(mysql_error());
      $_SESSION['name']= $name;
+    mysql_query("UPDATE users SET score=0, category_id='".$category."' where user_name='".$_SESSION['name']."' ") or die(mysql_error()); 
+
+     //$_SESSION['name']= $name;
      $_SESSION['id'] = mysql_insert_id();
  }
 $category=$_POST['category'];
@@ -62,7 +61,7 @@ if(!empty($_SESSION['name'])){
         <div id='timer'>
             <script type="application/javascript">
             var myCountdownTest = new Countdown({
-                                    time: 60, 
+                                    time: 30, 
                                     width:200, 
                                     height:80, 
                                     rangeHi:"minute"
@@ -146,9 +145,9 @@ if(!empty($_SESSION['name'])){
 			</div>
 		</div>
        <footer>
-            <p class="text-center" id="foot">
-                &copy; <a href="http://fewpress.com/" target="_blank">FewPress.com</a>2014
-            </p>
+           <!-- <p class="text-center" id="foot">
+                &copy; <a href="#" target="_blank"> </a>2017
+            </p> -->
         </footer>
 
 
@@ -214,7 +213,7 @@ if(isset($_POST[1])){
 </html>
 <?php }else{
     
- header( 'Location: http://localhost/new_quiz/index.php' ) ;
+ header( 'Location: http://localhost/quiz/logout.php' ) ;
       
 }
 ?>

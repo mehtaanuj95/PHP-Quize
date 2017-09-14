@@ -1,10 +1,7 @@
 <?php
 session_start();
 ?>
-<!---
-Site	:	WWW.FEWPRESS.COM
-Author	:	Md. Rokonuzzaman Rokon
---->
+
 
 <?php 
 require 'config.php';
@@ -75,7 +72,8 @@ if(!empty($_SESSION['name'])){
                   </div>
                   
                   <div class="col-xs-6 col-sm-3 col-lg-3"> 
-                     <a href="<?php echo BASE_PATH;?>" class='btn btn-success'>Start new Quiz!!!</a>                   
+                     <!-- This option must not be provided to the user -->
+                     <!-- <a href="<?php echo BASE_PATH;?>" class='btn btn-success'>Start new Quiz!!!</a> -->                   
                      <a href="<?php echo BASE_PATH.'logout.php';?>" class='btn btn-success'>Logout</a>
                    
                        <div style="margin-top: 30%">
@@ -92,9 +90,10 @@ if(!empty($_SESSION['name'])){
             </div>
         </div>
         <footer>
-            <p class="text-center" id="foot">
-                &copy; <a href="http://fewpress.com/" target="_blank">FewPress.com</a>2014
+           <!--  <p class="text-center" id="foot">
+                &copy; <a href="#" target="_blank">  &nbsp</a>2017
             </p>
+            -->
         </footer>
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="js/jquery-1.10.2.min.js"></script>
@@ -109,6 +108,6 @@ if(!empty($_SESSION['name'])){
 </html>
 <?php }else{
     
- header( 'Location: http://localhost/qq/index.php' ) ;
+ header( 'Location: http://localhost/quiz/index.php' ) ;
       
 }?>
