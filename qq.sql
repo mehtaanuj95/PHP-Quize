@@ -1,13 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 3.4.5
+-- version 4.0.10deb1
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 29, 2013 at 06:37 AM
--- Server version: 5.5.16
--- PHP Version: 5.3.8
+-- Generation Time: Sep 14, 2017 at 07:30 PM
+-- Server version: 5.5.50-0ubuntu0.14.04.1
+-- PHP Version: 5.5.9-1ubuntu4.19
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `quiz`
+-- Database: `qq`
 --
 
 -- --------------------------------------------------------
@@ -72,7 +72,7 @@ INSERT INTO `questions` (`id`, `question_name`, `answer1`, `answer2`, `answer3`,
 (5, 'Which team has the Largest successful run chase record in ODIs ?\r\n\r\n\r\n\r\n\r\n', 'England', 'South Africa', 'Australia', 'India', '2', 1),
 (6, 'What does HTML stand for?\r\n\r\n	\r\n	\r\n	', 'Hyper Text Markup Language', 'Hyperlinks and Text Markup Language', 'Home Tool Markup Language', 'Highly Text Markup Language', '1', 2),
 (7, 'Who is making the Web standards?\r\n\r\n	\r\n	\r\n	\r\n	\r\n', 'Microsoft', 'Google', 'The World Wide Web Consortium', 'Mozilla', '3', 2),
-(8, 'What is the correct HTML for creating a hyperlink?\r\n\r\n	\r\n	\r\n	\r\n	', '&lt;a name=&quot;http://fewpress.com&quot;&gt;Smart Tutorials&lt;/a&gt;', '&lt;a&gt;http://fewpress.com&lt;/a&gt;', '&lt;a url=&quot;http://fewpress.com&quot;&gt;Smart Tutorials&lt;/a&gt;', '&lt;a href=&quot;http://fewpress.com&quot;&gt;Smart Tutorials&lt;/a&gt;', '4', 2),
+(8, 'What is the correct HTML for creating a hyperlink?\r\n\r\n	\r\n	\r\n	\r\n	', '&lt;a name=&quot;http://smarttutorials.net&quot;&gt;Smart Tutorials&lt;/a&gt;', '&lt;a&gt;http://smarttutorials.net&lt;/a&gt;', '&lt;a url=&quot;http://smarttutorials.net&quot;&gt;Smart Tutorials&lt;/a&gt;', '&lt;a href=&quot;http://smarttutorials.net&quot;&gt;Smart Tutorials&lt;/a&gt;', '4', 2),
 (9, 'What is the HTML element to bold a text?\r\n\r\n\r\n\r\n\r\n', '&lt;b&gt;', '&lt;bold&gt;', '&lt;wide&gt;', '&lt;big&gt;', '1', 2),
 (10, 'What is the HTML tag for a link?\r\n\r\n\r\n\r\n\r\n', '&lt;link&gt;', '&lt;ref&gt;', '&lt;a&gt;', '&lt;hper&gt;', '3', 2),
 (11, 'What does CSS stand for?\r\n\r\n	\r\n	\r\n	\r\n	', 'Creative Style Sheets', 'Colorful Style Sheets', 'Computer Style Sheets', 'Cascading Style Sheets', '4', 4),
@@ -97,19 +97,29 @@ CREATE TABLE IF NOT EXISTS `users` (
   `user_name` varchar(50) NOT NULL,
   `score` int(11) NOT NULL,
   `category_id` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+  `count` int(2) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `user_name` (`user_name`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=20 ;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `user_name`, `score`, `category_id`) VALUES
-(1, 'muni', 0, 2),
-(2, 'muni2', 0, 3),
-(3, 'muni16', 0, 1),
-(4, 'muni55', 0, 1),
-(5, 'muni17', 5, 2);
+INSERT INTO `users` (`id`, `user_name`, `score`, `category_id`, `count`) VALUES
+(1, 'muni', 0, 2, 1),
+(2, 'muni2', 0, 3, 0),
+(3, 'muni16', 0, 1, 0),
+(4, 'muni55', 0, 1, 0),
+(5, 'muni17', 5, 2, 0),
+(6, 'MD. ROKONUZZAMAN', 0, 2, 0),
+(7, 'anuj', 1, 2, 1),
+(8, 'test2', 1, 1, 1),
+(14, 'test3', 5, 2, 1),
+(15, 'test4', 3, 2, 1),
+(17, 'test5', 3, 2, 1),
+(18, 'test8', 3, 2, 1),
+(19, 'test9', 4, 2, 1);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
