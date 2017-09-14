@@ -1,5 +1,6 @@
 A Quiz Application to conduct quizzes.
 Features include 
+	
 	1. stopwatch (currently has a bug in it)
 	
 	2. different quiz categories
