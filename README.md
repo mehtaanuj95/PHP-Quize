@@ -1,9 +1,13 @@
 A Quiz Application to conduct quizzes.
 Features include 
 	1. stopwatch (currently has a bug in it)
+	
 	2. different quiz categories
+	
 	3. random question sequence
+	
 	4. A simple UI.
+	
 	5. Uniue User predictor.
 
 Feature 5 :-	
